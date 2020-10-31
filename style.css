@@ -1,0 +1,123 @@
+:root {
+    --rotation: 30deg;
+    --minus-rotation: calc(var(--rotation) * -1);
+}
+
+* {
+    box-sizing: border-box;
+}
+body {
+    height: 100vh;
+    display: flex;
+}
+
+.mid-circle {
+    width: 200px;
+    height: 200px;
+    background-color: #31c883;
+    border-radius: 50%;
+    margin: auto;
+    position: absolute;
+    transform: rotate(var(--minus-rotation));
+    top: calc(50% - 100px);
+    left: calc(50% - 100px);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.inner-circle {
+    width: 28px;
+    height: 28px;
+    background-color: #fff;
+    position: absolute;
+    left: calc(50% - 14px);
+    bottom: 10%;
+    border-radius: 50%;
+}
+
+.container {
+    position: relative;
+    width: 260px;
+    height: 260px;
+    margin: auto;
+    border-radius: 50%;
+    display: flex;
+    transform: rotate(-15deg);
+}
+
+.dot-container {
+    position: absolute;
+    /* z-index: -1; */
+    width: 270px;
+    height: 270px;
+    background-color: transparent;
+    margin: auto;
+    border-radius: 50%;
+}
+.dot {
+    background-color: #000;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    position: absolute;
+    left: calc(50% - 7.5px);
+    bottom: 0;
+    transition: all 0.3s ease-out;
+}
+
+.dot-container.one {
+    transform: rotate(var(--minus-rotation));
+}
+.dot-container.two {
+    transform: rotate(0deg);
+}
+.dot-container.three {
+    transform: rotate(calc(var(--rotation) * 1));
+}
+.dot-container.four {
+    transform: rotate(calc(var(--rotation) * 2));
+}
+.dot-container.five {
+    transform: rotate(calc(var(--rotation) * 3));
+}
+.dot-container.six {
+    transform: rotate(calc(var(--rotation) * 4));
+}
+.dot-container.seven {
+    transform: rotate(calc(var(--rotation) * 5));
+}
+.dot-container.eight {
+    transform: rotate(calc(var(--rotation) * 6));
+}
+.dot-container.nine {
+    transform: rotate(calc(var(--rotation) * 7));
+}
+.dot-container.ten {
+    transform: rotate(calc(var(--rotation) * 8));
+}
+.dot-container.eleven {
+    transform: rotate(calc(var(--rotation) * 9));
+    height: 320px;
+}
+
+.big .dot {
+    width: 12px;
+    height: 12px;
+}
+.text {
+    position: absolute;
+    left: calc(50% - 15px);
+    bottom: 0px;
+    transition: all 0.3s ease-out;
+    transform: rotate(103deg);
+    color: orange;
+    font-size: 2rem;
+    opacity: 0;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: all 0.3s ease-out;
+}
+
+.text.big {
+    opacity: 1;
+    font-size: 3rem;
+}
